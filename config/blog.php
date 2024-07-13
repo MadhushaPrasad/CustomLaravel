@@ -1,4 +1,11 @@
-<?
+<?php
+
+// use Illuminate\Support\Facades\Config;
+
+// Config::set('app.timezone', 'America/Chicago');
+
+// config(['app.timezone' => 'America/Chicago']);
+
 return [
     'blogs' => [
         'title' => 'My Blog',
