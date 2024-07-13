@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Config;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -24,4 +25,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+#global config function
+Route::get('custom', function () {
+    dd(config('app.developers'));
+});
+
+#Config facade
+$value = Config::get('blog.blogs');
+
+Route::get('blog', function () use ($value) {
+    dd($value);
+});
+
+
+require __DIR__ . '/auth.php';

@@ -10,7 +10,6 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Config;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
@@ -57,16 +56,4 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
-});
-
-#global config function
-Route::get('custom', function () {
-    dd(config('app.developers'));
-});
-
-#Config facade
-$value = Config::get('blog.blogs');
-
-Route::get('blog', function () use ($value) {
-    dd($value);
 });
