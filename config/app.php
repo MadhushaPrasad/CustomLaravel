@@ -84,6 +84,12 @@ return [
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
 
+    'developers' => [
+        'madhusha@gmail.com',
+        'prasad@gmail.com',
+        'silva@gmail.com',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
