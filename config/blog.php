@@ -1,5 +1,6 @@
 <?php
 
+#set configuration values at runtime
 // use Illuminate\Support\Facades\Config;
 
 // Config::set('app.timezone', 'America/Chicago');
